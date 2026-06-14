@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maker 研發日誌與零件管理系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="api-banner">
+            <h3>💡 今日 GitHub 技術金句</h3>
+            <p id="quote-text">正在從 GitHub API 載入靈感...</p>
+        </div>
+
+        <div class="card">
+            <h2>🛠️ 新增研發日誌</h2>
+            <form id="log-form">
+                <div class="form-group">
+                    <label for="project-name">專案名稱</label>
+                    <input type="text" id="project-name" placeholder="例如：ErgoChair 智慧椅墊" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="progress">研發進度 (%)</label>
+                    <select id="progress" required>
+                        <option value="10">10% - 概念構想</option>
+                        <option value="30">30% - 電路設計 / 原型採購</option>
+                        <option value="50">50% - 硬體組裝 / 基礎測試</option>
+                        <option value="70">70% - 程式撰寫 / 核心除錯</option>
+                        <option value="90">90% - 功能迭代 / 外殼優化</option>
+                        <option value="100">100% - 專案完成</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>實驗結果狀態</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="status" value="🟢 成功 (Success)" checked>
+                            <span class="custom-radio success">成功</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="status" value="🔴 失敗 (Failed)">
+                            <span class="custom-radio danger">失敗 / 需除錯</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">零件消耗與實驗備註</label>
+                    <textarea id="notes" rows="4" placeholder="記錄使用了什麼感測器、開關、或是遇到的 Bug..." required></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn">儲存實驗日誌</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
